@@ -36,5 +36,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Ril
 BOARD_RIL_CLASS := ../../../device/samsung/hlteusc/ril
 
+# RIL
+BOARD_RIL_CLASS := ../../../device/samsung/klteusc/ril
+
 # inherit from the proprietary version
 -include vendor/samsung/hlteusc/BoardConfigVendor.mk
