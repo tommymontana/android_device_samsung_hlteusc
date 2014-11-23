@@ -15,12 +15,15 @@
 # inherit from common hlte
 -include device/samsung/hlte-common/BoardConfigCommon.mk
 
-TARGET_OTA_ASSERT_DEVICE := SM-N900R4,hlteusc
+TARGET_OTA_ASSERT_DEVICE := hlteusc,SM-N900R4
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/hlteusc/init/init_hlte.c
+TARGET_LIBINIT_DEFINES_FILE := device/samsung/hlteusc/init/init_hlteusc.c
 TARGET_UNIFIED_DEVICE := true
+
+# Kernel
+TARGET_KERNEL_VARIANT_CONFIG := msm8974_sec_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 11534336
@@ -29,6 +32,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1572864000
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 28651290624
 BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_USERIMAGES_USE_EXT4 := true
+
+# Ril
+BOARD_RIL_CLASS := ../../../device/samsung/hlteusc/ril
 
 # inherit from the proprietary version
 -include vendor/samsung/hlteusc/BoardConfigVendor.mk
