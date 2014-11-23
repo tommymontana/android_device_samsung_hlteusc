@@ -20,10 +20,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product-if-exists, vendor/samsung/hlteusc/hlteusc-vendor.mk)
 
 # NFC
-PRODUCT_COPY_FILES += \
-    device/samsung/hlteusc/configs/security_nfc_profile.dat:system/etc/security_nfc_profile.dat \
-    device/samsung/hlteusc/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
-
+PRODUCT_PACKAGES += \
+nfc_nci.pn54x.default
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
