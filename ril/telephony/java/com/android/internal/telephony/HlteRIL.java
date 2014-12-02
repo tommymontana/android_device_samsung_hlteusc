@@ -907,11 +907,6 @@ public class HlteRIL extends RIL implements CommandsInterface {
         send(rr);
     }
 
-    // Hack for Lollipop
-    // The system now queries for SIM status before radio on, resulting
-    // in getting an APPSTATE_DETECTED state. The RIL does not send an
-    // RIL_UNSOL_RESPONSE_SIM_STATUS_CHANGED message after the SIM is
-    // initialized, so delay the message until the radio is on.
     @Override
     public void
     getIccCardStatus(Message result) {
